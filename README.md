@@ -1,0 +1,1 @@
+# seminario_gestion_tecnologia
