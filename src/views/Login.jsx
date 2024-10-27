@@ -7,7 +7,7 @@ export const Login = () => {
 
     return(
         <Container maxWidth={1} sx={{...login_style.container}}>
-            <Grid container sx={{...login_style.container}}>
+            <Grid container sx={{...login_style.grid_container}}>
                 <Grid item xs={12} sx={{width:'100%'}}>
                     <Typography sx={{
                         color:'#9b9898',
@@ -51,12 +51,15 @@ const login_style = {
         height:'auto',
         padding:1,
         backgroundColor:'rgb(229,228,228)',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
 
     },
     grid_container:{
         display:'flex',
         flexWrap:'wrap',
-
+        width:'90%'
 
     },
     grid_item:{

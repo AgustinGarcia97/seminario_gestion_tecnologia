@@ -15,7 +15,7 @@ const backgroundStyle = {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height:'100%',
-        width:'55%',
+        width:'70%',
 
 
 
