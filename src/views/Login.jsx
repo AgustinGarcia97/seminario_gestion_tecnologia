@@ -49,7 +49,7 @@ const login_style = {
     container:{
         height:'auto',
         padding:5,
-        backgroundColor:'rgba(213,210,210,0.45)',
+        backgroundColor:'rgb(229,228,228)',
 
     },
     grid_container:{
