@@ -3,15 +3,16 @@ import {Box} from "@mui/material";
 export const Logo = () => {
     return(
         <Box sx={{...background_style.container}}>
-
+            2
         </Box>)
 }
 
 const background_style = {
     container:{
-        height:{xs:'',md:0,lg:0,xl:370},
+        height:'35vh',
         backgroundColor:'#d2cbcb',
         width:'100%',
+
 
     }
 }

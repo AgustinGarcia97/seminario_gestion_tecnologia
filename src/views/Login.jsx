@@ -19,6 +19,7 @@ export const Login = () => {
                     item
                     sx={{
                         ...login_style.grid_item,
+
                         width:{xs:'',md:'',lg:'',xl:'50%'},
 
 
@@ -48,7 +49,7 @@ export const Login = () => {
 const login_style = {
     container:{
         height:'auto',
-        padding:5,
+        padding:1,
         backgroundColor:'rgb(229,228,228)',
 
     },
@@ -59,7 +60,7 @@ const login_style = {
 
     },
     grid_item:{
-        height:'100%',
+        height:'90vh',
         backgroundColor:'#fff'
 
     },
@@ -69,7 +70,8 @@ const login_style = {
         alignItems:'center',
         width: {xs: '', md: '', lg: '', xl: '50%'},
         backgroundColor: '#fff',
-        paddingBottom:3,
+        height:'90vh',
+
     }
 
 }

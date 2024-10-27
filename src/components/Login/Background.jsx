@@ -14,7 +14,7 @@ const backgroundStyle = {
         backgroundImage: `url('public/img/login/core_artwork.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height:'100vh',
+        height:'100%',
         width:'55%',
 
 
