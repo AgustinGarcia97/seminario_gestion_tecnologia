@@ -6,14 +6,10 @@ import {Background} from "../components/Login/Background.jsx";
 export const Login = () => {
 
     return(
-        <Container maxWidth={1} sx={{...login_style.container}}>
+
             <Grid container sx={{...login_style.grid_container}}>
                 <Grid item xs={12} sx={{width:'100%'}}>
-                    <Typography sx={{
-                        color:'#9b9898',
-                        fontSize:{xs:'',md:'',lg:'',xl:45},
-                        fontWeight:'bold'
-                    }}>Login</Typography>
+
                 </Grid>
                 <Grid
                     item
@@ -40,13 +36,13 @@ export const Login = () => {
 
             </Grid>
 
-        </Container>
+
 
 
     )
 }
 
-const login_style = {
+export const login_style = {
     container:{
         height:'auto',
         padding:1,

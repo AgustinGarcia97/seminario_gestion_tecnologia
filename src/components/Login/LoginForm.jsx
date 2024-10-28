@@ -1,9 +1,10 @@
 import Grid from "@mui/material/Grid2";
 import {Avatar, Box, Button, Divider, Typography} from "@mui/material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import {Logo} from "./Logo.jsx";
+import {useNavigate} from "react-router-dom";
 
 export const LoginForm = () => {
+    const navigate = useNavigate();
     return(
         <Grid container sx={{...login_form_style.container}}>
 
@@ -12,13 +13,13 @@ export const LoginForm = () => {
                     <Typography sx={{
                         fontWeight:'bold',
                         fontSize:{xs:'auto',md:'auto',lg:'auto',xl:30},
-                        color:'#232d41'
-                    }}>Login</Typography>
+                        color:'#0C2751'
+                    }}>Iniciar sesión</Typography>
                     <Typography sx={{
                         fontWeight:'600',
                         fontSize:{xs:'auto',md:'auto',lg:'auto',xl:15},
                         color:'#989696'
-                    }}>Please select your account</Typography>
+                    }}>Selecciona tu cuenta</Typography>
                 </Box>
 
             </Grid>
@@ -28,7 +29,7 @@ export const LoginForm = () => {
                     <Box sx={{...login_form_style.box_user_data}} >
                         <Avatar/>
                         <Box sx={{display:"flex", justifyContent:'center', alignItems:'center',gap:{xs:0,md:0,lg:0,xl:0.5}}}>
-                            <Typography sx={{color:'#aba9a9'}}>Welcome back</Typography>
+                            <Typography sx={{color:'#aba9a9'}}>Bienvenido nuevamente</Typography>
                             <Typography sx={{color:'#575757', fontWeight:'bold'}}>User</Typography>
                         </Box>
 
@@ -39,15 +40,18 @@ export const LoginForm = () => {
                                 color:'#dc5454',
                                 backgroundColor:'transparent',
                                 fontWeight:'bold'
-                    }}>Remove
+                    }}>Eliminar
                     </Button>
                 </Box>
             </Grid>
             <Grid item>
                 <Box sx={{...login_form_style.box,backgroundColor:'#fff', marginTop:5}}>
-                    <Typography sx={{...login_form_style.font}}>Login to a different account</Typography>
-                    <Button variant="contained" color="secondary" sx={{...login_form_style.login_button, border:'none',}}>
-                        <Typography>Login</Typography>
+                    <Typography sx={{...login_form_style.font}}>Iniciar sesión con una cuenta diferente</Typography>
+                    <Button variant="contained" color="secondary" sx={{...login_form_style.login_button, border:'none',}}
+                            onClick={()=>{navigate('/')}}
+
+                    >
+                        <Typography>Acceder</Typography>
                         <NavigateNextIcon sx={{marginBottom:0.2}}/>
                     </Button>
                 </Box>
@@ -55,14 +59,17 @@ export const LoginForm = () => {
             <Divider sx={{width:'100%', backgroundColor: '#ececec',}}/>
             <Grid item>
                 <Box sx={{...login_form_style.box, backgroundColor:'#fff'}}>
-                    <Typography sx={{...login_form_style.font}}>Does not have an account?</Typography>
+                    <Typography sx={{...login_form_style.font}}>No tenes una cuenta?</Typography>
                     <Button  color="secondary"
                              sx={{
                                 ...login_form_style.login_button,
                                  color:'rgba(37,0,123,0.75)',
                                  backgroundColor:'transparent',
                                  fontWeight:'bold'
-                    }}>Sign Up</Button>
+                    }}
+                    onClick={()=>{navigate('/register')}}
+
+                    >Registrate</Button>
                 </Box>
             </Grid>
         </Grid>
@@ -108,7 +115,7 @@ const login_form_style = {
         borderRadius:2,
     },
     font:{
-        color:'#4b4b4b',
+        color:'#475467',
         fontWeight:'bold',
         fontSize:15
 
