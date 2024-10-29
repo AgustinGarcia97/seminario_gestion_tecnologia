@@ -11,8 +11,8 @@ function App() {
 
   return (
       <BrowserRouter>
-        <Container maxWidth={1} sx={{...login_style.container,flexDirection:'column',}}>
-            <Title/>
+        <Container maxWidth={1} sx={{...login_style.container,flexDirection:'column',}} style={{padding:0}}>
+
             <Navbar></Navbar>
             <ModuleRoutes/>
         </Container>

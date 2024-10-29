@@ -58,8 +58,9 @@ export const Navbar = () => {
 
 const navbar_style = {
     container:{
-        width:'90%',padding:0, backgroundColor:'transparent', boxShadow:'none',
+        width:'100%',padding:0, backgroundColor:'#fff', boxShadow:'none',
         display:'flex',
+        paddingBottom:2,
     },
     logo:{
         backgroundImage:`url('public/img/login/logo.png')`,
@@ -72,7 +73,7 @@ const navbar_style = {
 
     },
     toolbar:{
-        backgroundColor:'rgba(213,212,212,0.58)',
+
         height:90,
         width:'100%',
         display:'flex',

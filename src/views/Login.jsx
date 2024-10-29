@@ -45,7 +45,7 @@ export const Login = () => {
 export const login_style = {
     container:{
         height:'auto',
-        padding:1,
+        padding:0,
         backgroundColor:'rgb(229,228,228)',
         display:'flex',
         alignItems:'center',
@@ -55,7 +55,7 @@ export const login_style = {
     grid_container:{
         display:'flex',
         flexWrap:'wrap',
-        width:'90%'
+        width:'100%'
 
     },
     grid_item:{

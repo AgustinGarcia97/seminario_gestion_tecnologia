@@ -7,7 +7,7 @@ import {Resources} from "../components/Home/resources/Resources.jsx";
 export const Home = () => {
     return(
 
-            <Grid container sx={{width:'90%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+            <Grid container sx={{width:'100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
                 <Grid item sx={{width:'100%'}}>
                     <Banner/>
                 </Grid>

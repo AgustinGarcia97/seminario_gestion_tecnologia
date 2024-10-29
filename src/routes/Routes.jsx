@@ -5,6 +5,7 @@ import {Home} from "../views/Home.jsx";
 import {Login} from "../views/Login.jsx";
 import {Register} from "../views/Register.jsx";
 import {RegisterLastStep} from "../components/Register/RegisterLastStep.jsx";
+import {ChatOpia} from "../views/ChatOpia.jsx";
 
 export const ModuleRoutes = () => {
     return (
@@ -13,6 +14,7 @@ export const ModuleRoutes = () => {
             <Route path={"/login"} element={<Login/>}/>
             <Route path={"/register"} element={<Register/>}/>
             <Route path={"/next-step-register"} element={<RegisterLastStep/>}/>
+            <Route path={"/OPIA"} element={<ChatOpia/>}/>
         </Routes>
     )
 }
