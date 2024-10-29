@@ -42,7 +42,7 @@ export const Recomendations = () => {
     );
 };
 
-const recomendations_style = {
+export const recomendations_style = {
     container:{
         width: '70%',
         marginTop:3,
