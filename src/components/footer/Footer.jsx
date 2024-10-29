@@ -1,29 +1,41 @@
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import React from 'react';
+import { Box, Typography, Link } from '@mui/material';
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <Box
-            component="footer"
             sx={{
-                backgroundColor: '#de3030',
-                color: '#333',
-                padding: '20px',
+                backgroundColor: '#fff',
+                paddingTop:2,
+                paddingBottom:2,
+                borderTop: '2px solid #e0e0e0',
                 textAlign: 'center',
-                borderTop: '1px solid #e0e0e0',
-                marginTop: 'auto',
-                width:'100%',
+                width: '100%',
+                height:60,
+                display:'flex',
+                flexDirection:'column',
+                justifyContent: 'space-between',
+                alignItems:'center',
+
+
             }}
         >
-            <Typography variant="body2" sx={{ fontSize: '14px', color: '#666' }}>
-                © {new Date().getFullYear()} My Company. All rights reserved.
+            <Typography variant="body2" color="text.secondary">
+                © {new Date().getFullYear()} Optimus Pyme. Todos los derechos reservados.
             </Typography>
-            <Box sx={{ marginTop: '10px' }}>
-                <Link href="#" sx={{ color: '#666', textDecoration: 'none', mx: 1 }}>Privacy Policy</Link>
-                <Link href="#" sx={{ color: '#666', textDecoration: 'none', mx: 1 }}>Terms of Service</Link>
-                <Link href="#" sx={{ color: '#666', textDecoration: 'none', mx: 1 }}>Contact Us</Link>
+            <Box sx={{ marginTop: 1 }}>
+                <Link href="#" color="inherit" underline="hover" sx={{ margin: '0 10px' }}>
+                    Términos de Servicio
+                </Link>
+                <Link href="#" color="inherit" underline="hover" sx={{ margin: '0 10px' }}>
+                    Política de Privacidad
+                </Link>
+                <Link href="#" color="inherit" underline="hover" sx={{ margin: '0 10px' }}>
+                    Contacto
+                </Link>
             </Box>
         </Box>
     );
-}
+};
+
+export default Footer;

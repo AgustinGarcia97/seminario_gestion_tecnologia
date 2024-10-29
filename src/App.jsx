@@ -4,6 +4,7 @@ import {Title} from "./components/app/Title.jsx";
 import {Container} from "@mui/material";
 import {ModuleRoutes} from "./routes/Routes.jsx";
 import {BrowserRouter} from "react-router-dom";
+import Footer from "./components/footer/Footer.jsx";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Navbar></Navbar>
             <ModuleRoutes/>
         </Container>
+          <Footer/>
       </BrowserRouter>
   )
 }
