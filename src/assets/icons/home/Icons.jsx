@@ -112,22 +112,28 @@ export const HomeIcons = [
     {
         title: 'Mejora la seguridad de acceso',
         icon: <SecurityIcon/>,
+        description: 'Proteger el acceso a los sistemas es clave. Utiliza contraseñas fuertes y únicas para cada cuenta y asegura que solo el personal autorizado pueda acceder a la información crítica...',
     },
     {
         title: 'Habilita autenticación en dos pasos',
         icon: <PadLock/>,
+        description: 'Refuerza la seguridad de tu empresa activando la autenticación en dos pasos (2FA). Este método añade una capa adicional de protección al requerir un segundo factor de verificación...'
     },
     {
         title: 'Vigila tu infraestructura',
         icon: <Chart/>,
+        description: 'Mantén tus sistemas actualizados instalando parches de seguridad regularmente. Esto corrige vulnerabilidades y reduce el riesgo de ataques que aprovechan errores en el software...'
     },
     {
         title: 'Instala parches de seguridad',
         icon: <SecurityPatch/>,
+        description: 'Mantén tus sistemas actualizados instalando parches de seguridad regularmente. Esto corrige vulnerabilidades y reduce el riesgo de ataques que aprovechan errores en el software...'
+
     },
     {
         title: 'Capacita a tu equipo Ciberseguridad',
         icon: <SecurityCourse/>,
+        description: 'Educar a tus empleados en buenas prácticas de ciberseguridad es fundamental. Capacítalos para identificar amenazas como el phishing y manejar los sistemas de forma segura...'
     }
 
 ];
