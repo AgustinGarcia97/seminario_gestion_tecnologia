@@ -36,7 +36,7 @@ const resource_style = {
         width:'100%',
         backgroundColor:'white',
         alignItems:'center',
-        height:{xs:'',md:'',lg:'',xl:300},
+        height:{xs:'',md:'',lg:'',xl:400},
         color:'#4326a1',
 
 
