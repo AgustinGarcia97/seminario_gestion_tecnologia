@@ -41,7 +41,7 @@ export const Chat = () => {
             <Typography variant="body2" color="textSecondary" sx={{
                 ...chat_style.typo,
                 fontSize: 20,
-                fontWeight: 'bold'
+
             }}>{displayedAnswer}</Typography>
         </Box>
     )
