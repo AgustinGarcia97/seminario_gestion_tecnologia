@@ -12,8 +12,11 @@ export const Chat = () => {
             setDisplayedAnswer("");
 
             const typeInterval = setInterval(() => {
-                if (index < QA.answer.length-1) {
-                    setDisplayedAnswer(prev => prev + QA.answer[index]);
+                if (index < QA.answer.length) {
+                    const nextChar = QA.answer[index];
+                    if (nextChar !== undefined) {
+                        setDisplayedAnswer(prev => prev + nextChar);
+                    }
                     index++;
                 } else {
                     clearInterval(typeInterval);
