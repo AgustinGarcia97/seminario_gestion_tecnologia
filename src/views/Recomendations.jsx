@@ -11,7 +11,7 @@ export const Recomendations = () => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'start',
+                justifyContent: 'center',
                 alignItems: 'center',
                 marginBottom:0,
                 height: { xs: 'auto', md: 'auto', xl: '80vh' },

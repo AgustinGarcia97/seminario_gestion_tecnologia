@@ -16,7 +16,7 @@ export const RegisterLastStep = () => {
                 sx={{
                     ...login_style.grid_item,
 
-                    width:{xs:'',md:'',lg:'',xl:'50%'},
+                    width:{xs:'',md:'',lg:'',xl:'45%'},
 
 
                 }}>

@@ -81,7 +81,8 @@ const login_form_style = {
         display:'flex',
         flexDirection:'column',
         width:{xs:'',md:'',lg:'',xl:'60%'},
-        height: '60vh'
+        height: '60vh',
+
 
     },
     box:{

@@ -16,7 +16,7 @@ export const Register = () => {
                 sx={{
                     ...login_style.grid_item,
 
-                    width:{xs:'',md:'',lg:'',xl:'50%'},
+                    width:{xs:'',md:'',lg:'',xl:'45%'},
 
 
                 }}>
@@ -28,6 +28,7 @@ export const Register = () => {
                     ...login_style.grid_item,
                     ...login_style.grid_item2,
                     justifyContent:'center'
+
 
 
                 }}>

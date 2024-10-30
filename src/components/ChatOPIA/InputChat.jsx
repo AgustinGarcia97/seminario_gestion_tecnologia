@@ -10,7 +10,6 @@ export const InputChat = () => {
                 placeholder={"Escribi tu consulta acá..."}
                 sx={{
                     width: '80%',
-                    marginTop:30,
                     padding:2,
                     backgroundColor:'rgba(154,154,154,0.18)',
                     boxShadow: '0px -4px 6px rgba(0, 0, 0, 0.1)',
@@ -52,7 +51,7 @@ const input_style = {
         alignItems: 'center',
         width: '100%',
         padding: 0,
-        marginTop:20,
+
 
     },
 };

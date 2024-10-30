@@ -1,8 +1,16 @@
 import Grid from "@mui/material/Grid2";
 import { icons } from "../../assets/icons/chat/Icons.jsx";
 import { Box, Typography } from "@mui/material";
+import {useDispatch} from "react-redux";
+import {chatOPIASlice, processAnswer} from "../../redux/slices/chatopiaSlice.js";
 
 export const ChatSuggestions = () => {
+    const dispatch = useDispatch();
+
+    const onClickAnswer = (id) => {
+        dispatch(processAnswer(id))
+    }
+
     return (
         <Grid container sx={{ ...chat_suggestions.grid }}>
 
@@ -12,9 +20,12 @@ export const ChatSuggestions = () => {
                     xs={12} sm={12} md={4}
                     key={index}
                     sx={{ ...chat_suggestions.container }}
+                    onClick={()=>onClickAnswer(index+1)}
                 >
                     <Box sx={{ ...chat_suggestions.box }}>
-                        <Box sx={{height:'20%', display:"flex",justifyContent:'center',alignItems:'center',}}>
+                        <Box sx={{height:'20%', display:"flex",justifyContent:'center',alignItems:'center',}}
+
+                        >
                             {icon.icon}
                         </Box>
 
@@ -53,7 +64,7 @@ const chat_suggestions = {
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius:10,
-        height: '60%',
+        height: '40%',
         '&:hover': {
             backgroundColor: 'rgba(255,255,255,0.26)',
         },

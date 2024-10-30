@@ -16,7 +16,7 @@ export const Login = () => {
                     sx={{
                         ...login_style.grid_item,
 
-                        width:{xs:'',md:'',lg:'',xl:'50%'},
+                        width:{xs:'',md:'',lg:'',xl:'45%'},
 
 
                     }}>
@@ -27,6 +27,7 @@ export const Login = () => {
                     sx={{
                         ...login_style.grid_item,
                         ...login_style.grid_item2,
+                        marginLeft:2,
 
 
                     }}>
@@ -51,11 +52,14 @@ export const login_style = {
         alignItems:'center',
         justifyContent:'center',
 
+
     },
     grid_container:{
         display:'flex',
         flexWrap:'wrap',
-        width:'100%'
+        width:'100%',
+        backgroundColor:'#fff'
+
 
     },
     grid_item:{
@@ -67,9 +71,10 @@ export const login_style = {
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        width: {xs: '', md: '', lg: '', xl: '50%'},
+        width: {xs: '', md: '', lg: '', xl: '40%'},
         backgroundColor: '#fff',
         height:'90vh',
+
 
     }
 
