@@ -1,54 +1,80 @@
-import { Box, Divider, Typography } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { Box } from "@mui/material";
+import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
+import { useEffect, useRef, useState } from "react";
+import Message from "./Message";
+import { BotTyping } from "./BotTyping";
 
-export const Chat = () => {
-    const QA = useSelector(state => state.chatOPIA.selected_answer);
-    const [displayedAnswer, setDisplayedAnswer] = useState("");
+export const Chat = ({ isBotResponding, onFinishTyping }) => {
+  const { messages } = useSelector((state) => state.chatOPIA);
+  const [displayedAnswer, setDisplayedAnswer] = useState("");
+  const [displayedMessages, setDisplayedMessages] = useState(messages);
+  const messagesEndRef = useRef(null);
 
-    useEffect(() => {
-        if (QA.answer) {
-            let index = -1;
-            setDisplayedAnswer("");
+  useEffect(() => {
+    if (
+      messages.length > 0 &&
+      messages[messages.length - 1].role === "assistant"
+    ) {
+      const message = messages[messages.length - 1].message;
+      let index = -1;
 
-            const typeInterval = setInterval(() => {
-                if (index < QA.answer.length) {
-                    const nextChar = QA.answer[index];
-                    if (nextChar !== undefined) {
-                        setDisplayedAnswer(prev => prev + nextChar);
-                    }
-                    index++;
-                } else {
-                    clearInterval(typeInterval);
-                }
-            }, 10);
+      setDisplayedMessages(messages.slice(0, messages.length - 1));
 
-
-            return () => clearInterval(typeInterval);
+      const typeInterval = setInterval(() => {
+        if (index < message.length) {
+          const nextChar = message[index];
+          if (nextChar !== undefined) {
+            setDisplayedAnswer((prev) => prev + nextChar);
+          }
+          index++;
         } else {
-            setDisplayedAnswer("");
+          onFinishTyping();
+          clearInterval(typeInterval);
         }
-    }, [QA]);
+      }, 10);
 
-    return (
-        <Box sx={{ height: 'auto', width: '80%', padding: 3, display: 'flex', flexDirection: 'column', gap: 3 }}>
-            <Typography variant="body2" color="textSecondary" sx={{
-                ...chat_style.typo,
-                fontSize: 30,
-                fontWeight: 'bold'
-            }}>{QA.question}</Typography>
-            <Divider sx={{ backgroundColor: '#98A2B3' }} />
-            <Typography variant="body2" color="textSecondary" sx={{
-                ...chat_style.typo,
-                fontSize: 20,
-
-            }}>{displayedAnswer}</Typography>
-        </Box>
-    )
-}
-
-const chat_style = {
-    typo: {
-        color: '#98A2B3'
+      return () => clearInterval(typeInterval);
+    } else {
+      setDisplayedAnswer("");
+      setDisplayedMessages(messages);
     }
-}
+  }, [messages, onFinishTyping]);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [displayedAnswer, messages]);
+
+  return (
+    <Box
+      sx={{
+        height: "auto",
+        width: "80%",
+        padding: 3,
+        display: "flex",
+        flexDirection: "column",
+        gap: 3,
+        overflow: "auto",
+      }}
+    >
+      <Box sx={{ padding: 2 }}>
+        {displayedMessages.map((msg, index) => (
+          <Message key={index} messageData={msg} />
+        ))}
+      </Box>
+      {displayedAnswer && !isBotResponding && (
+        <Message
+          messageData={{ role: "assistant", message: displayedAnswer }}
+        />
+      )}
+      {isBotResponding && <BotTyping />}
+      <div ref={messagesEndRef} />
+    </Box>
+  );
+};
+
+Chat.propTypes = {
+  isBotResponding: PropTypes.bool,
+};
